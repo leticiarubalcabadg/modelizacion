@@ -57,7 +57,7 @@ public class MainGUI {
                 frame.setVisible(false);
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
-                int [][] bridg_it_file=bridg.getBridg();
+                int [][] bridg_it_file=bridg.getBridgit();
                 Interfaz interfaz = new Interfaz(bridg_it_file);
             }
         });

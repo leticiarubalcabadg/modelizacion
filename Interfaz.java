@@ -11,16 +11,13 @@ import java.awt.event.ActionListener;
 
 public class Interfaz extends InterfazFrame{
 
-	final int[][] bridg_it_file;
-	
     public Interfaz(final int[][] bridg_it_file) {
 
         super(bridg_it_file);
-        this.bridg_it_file=bridg_it_file;
 
         /**
          * This loop iterates through all the JTextFields to check user input with DocumentListener.
-         */
+         
         for (int i = 0; i < 11; i++) {
             for (int j = 0; j < 11; j++) {
                 final int finalI = i;
@@ -43,7 +40,7 @@ public class Interfaz extends InterfazFrame{
                                     JOptionPane.showMessageDialog(null, "This is not a correct move");
                                     RemoveText();
                                 }
-                                **/
+                                
 
 
                             }
@@ -79,7 +76,7 @@ public class Interfaz extends InterfazFrame{
 
                     /**
                      * Method implementing removing user input from jtextfield if not valid
-                     */
+                     
                     private void RemoveText() {
                         Runnable remove = new Runnable() {
                             @Override
@@ -94,7 +91,7 @@ public class Interfaz extends InterfazFrame{
 
                 });
             }
-        }
+        }**/
         //Submit button
         solve.addActionListener(new ActionListener() {
             @Override
