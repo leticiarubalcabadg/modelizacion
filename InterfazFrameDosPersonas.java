@@ -17,6 +17,8 @@ public class InterfazFrameDosPersonas extends JFrame{
 	    JMenu menu= new JMenu("Modos");
 	    JMenuItem option2Personas= new JMenuItem("Reiniciar modo dos personas");
 	    JMenuItem optionordenador= new JMenuItem("Modo ordenador");
+	    
+	    JTextField turnoTexto= new JTextField();
 	   
 
 
@@ -62,6 +64,12 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
 	            }
 	        });
+	        
+	        
+	        
+	       turnoTexto.setText("Es el turno del jugador 1:");
+	       turnoTexto.setEditable(false);
+	        
 	        
 	        
 	    	
@@ -159,8 +167,9 @@ public class InterfazFrameDosPersonas extends JFrame{
 	        contentPane.add(bridgit, BorderLayout.CENTER);
 	        contentPane.add(down,BorderLayout.PAGE_END);
 	        contentPane.add(menubar, BorderLayout.NORTH);
+	        contentPane.add(turnoTexto, BorderLayout.EAST);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);
-	        setSize(600, 600);
+	        setSize(800, 800);
 	        setBackground(Color.darkGray);
 	        setLocationRelativeTo(null);
 	        setResizable(false);
