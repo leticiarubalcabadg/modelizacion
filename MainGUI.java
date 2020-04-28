@@ -9,7 +9,8 @@ public class MainGUI {
 
     private JFrame frame;
     private JLabel title;
-    private JButton classic;
+    private JButton ordenador;
+    private JButton deDosJugadores;
 
 
     /**
@@ -45,25 +46,44 @@ public class MainGUI {
         title.setForeground(Color.white);
 
 
-        classic = new JButton("Start the game");
-        classic.setLayout(null);
-        classic.setBounds(235,300,125,30);
-        classic.setBackground(Color.white);
+        ordenador = new JButton("Jugar contra el ordenador");
+        ordenador.setLayout(null);
+        ordenador.setBounds(180,300,225,40);
+        ordenador.setBackground(Color.white);
 
 
-        classic.addActionListener(new ActionListener() {
+        ordenador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
                 int [][] bridg_it_file=bridg.getBridgit();
-                Interfaz interfaz = new Interfaz(bridg_it_file);
+                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
             }
         });
+        
+        deDosJugadores = new JButton("Jugar contra otro jugador");
+        deDosJugadores.setLayout(null);
+        deDosJugadores.setBounds(180,400,225,40);
+        deDosJugadores.setBackground(Color.white);
+        
+        
+        deDosJugadores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                StartingPuzzle bridg = new StartingPuzzle();;
+                 
+                int [][] bridg_it_file=bridg.getBridgit();
+                InterfazFrameDosPersonas interfaz = new InterfazFrameDosPersonas(bridg_it_file);
+            }
+        });
+        
 
  
-        frame.add(classic);
+        frame.add(ordenador);
+        frame.add(deDosJugadores);
         frame.add(title);
 
     }
