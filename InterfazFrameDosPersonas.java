@@ -10,6 +10,10 @@
 
 public class InterfazFrameDosPersonas extends JFrame{
 
+		//turno del jugador rojo->1
+		//turno del jugador azul ->2
+		//int [] turno;
+		
 	    protected JButton solve;
 	    JPanel down= new JPanel();
 	    
@@ -18,7 +22,7 @@ public class InterfazFrameDosPersonas extends JFrame{
 	    JMenuItem option2Personas= new JMenuItem("Reiniciar modo dos personas");
 	    JMenuItem optionordenador= new JMenuItem("Modo ordenador");
 	    
-	    JTextField turnoTexto= new JTextField();
+	    JMenu turnoTexto= new JMenu("Es turno del ROJO");
 	   
 
 
@@ -33,15 +37,19 @@ public class InterfazFrameDosPersonas extends JFrame{
 	    public InterfazFrameDosPersonas(int [][] bridg_it_file) {
 	        super();
 	        f= new JPanel[11][11];
+	        /**turno= new int [1];
+	        turno [0]=1;**/
 	        initComponents(bridg_it_file);
 	    }
 
 
 	    private void initComponents(final int [][] bridg_it_file) {
 	    	
+	    	
 	        menubar.add(menu);
 	        menu.add(optionordenador);
 	        menu.add(option2Personas);
+	        menubar.add(turnoTexto);
 	        
 	        option2Personas.addActionListener(new ActionListener() {
 	            @Override
@@ -65,27 +73,19 @@ public class InterfazFrameDosPersonas extends JFrame{
 	            }
 	        });
 	        
-	        
-	        
-	       turnoTexto.setText("Es el turno del jugador 1:");
-	       turnoTexto.setEditable(false);
-	        
-	        
-	        
-	    	
+
 	        for (int x = 0; x <11; x++) {        	
 	            for (int y = 0; y < 11; y++) {
 	                f[x][y] = new JPanel();
 	                botonColorRojo[x][y] = new JButton();
 	                botonColorAzul[x][y] = new JButton();
+	    	    	   
 	                Border border = BorderFactory.createLineBorder(Color.darkGray,1);
 	                f[x][y].setBorder(border);
 	                f[x][y].setFont(f[x][y].getFont().deriveFont(Font.BOLD, 14f));
 	                
-
-	                
-	                
 	                bridgit.add(f[x][y]);
+	                	    	    	
 
 	                if(bridg_it_file[x][y]==0){
 	                	
@@ -96,27 +96,41 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                	final int y2=y;
 	                	
 	                    f[x][y].setBackground(Color.WHITE);
+	                    	
+		    	    	   
+
 	                    
 	                    botonColorRojo[x][y].addActionListener(new ActionListener() {
 	                        @Override
 	                        public void actionPerformed(ActionEvent e) {
-	                        	//System.out.print(""+x2);
 	                        	f[x2][y2].setBackground(Color.RED);
 	                        	bridg_it_file[x2][y2]=1;
 	                        	
-	                        	f[x2][y2].remove(botonColorAzul[x2][y2]);
-	                        	f[x2][y2].remove(botonColorRojo[x2][y2]);
+	                        	//turno[0]=2;
 	                        	
-	                            for (int x = 0; x < 11; x++) {
-	                    			for (int y = 0; y <11; y++) {
-	                    				System.out.print(bridg_it_file[x][y]);
-	                    			}
-	                    			System.out.println();
-	                    		}
-	                            
+	                        	f[x2][y2].remove(botonColorRojo[x2][y2]);
+	                        	f[x2][y2].remove(botonColorAzul[x2][y2]);	                        	
+	                      
+	         	    	    	turnoTexto.setText("Es turno del AZUL");
+
+	         	   	        /**
+	         	    	    	for (int x = 0; x <11; x++) {        	
+	         	   	            for (int y = 0; y < 11; y++) {
+		         	   	            if(bridg_it_file[x][y]==0){
+			         	   	           	f[x][y].remove(botonColorAzul[x][y]);
+			         	   	           	f[x][y].remove(botonColorRojo[x][y]);
+		        	                    f[x][y].setBackground(Color.WHITE);
+		        	                    botonColorAzul[x][y].setBackground(Color.BLUE);	        	                    
+		        	                    f[x][y].add(botonColorAzul[x][y]);  
+		        	                    botonColorAzul[x][y].setBackground(Color.BLUE); 
+		         	   	            }
+	         	   	            }
+	         	   	        }**/
+	         	    	    	
+	         	    	    	 JPanel panel = new JPanel();
+	         	    	    	 JOptionPane.showMessageDialog(panel, "Turno del jugador azul");
 	                        }
 	                    });
-	                    
 	                    
 	                    botonColorAzul[x][y].addActionListener(new ActionListener() {
 	                        @Override
@@ -124,21 +138,57 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                        	//System.out.print(""+x2);
 	                        	f[x2][y2].setBackground(Color.BLUE);
 	                        	bridg_it_file[x2][y2]=2;
+
+	                        	//turno[0]=1;
 	                        	
 	                        	f[x2][y2].remove(botonColorAzul[x2][y2]);
 	                        	f[x2][y2].remove(botonColorRojo[x2][y2]);
+
+	                        	
+		         	    	    	turnoTexto.setText("Es turno del ROJO");
+		         	    	    	
+			         	   	     /**
+		         	    	    	for (int x = 0; x <11; x++) {        	
+			         	   	       for (int y = 0; y < 11; y++) {
+				         	   	         if(bridg_it_file[x][y]==0){
+				         	   	           	f[x][y].remove(botonColorAzul[x][y]);
+				         	   	           	f[x][y].remove(botonColorRojo[x][y]);
+			        	                    f[x][y].setBackground(Color.WHITE);
+				         	   	        	botonColorRojo[x][y].setBackground(Color.RED);
+				        	                f[x][y].add(botonColorRojo[x][y]);  
+				        	                botonColorRojo[x][y].setBackground(Color.RED); 
+				         	   	          }
+			         	   	          }
+			         	   	       }**/  
+		         	    	    	
+
+		         	    	    	 JPanel panel = new JPanel();
+		         	    	    	 JOptionPane.showMessageDialog(panel, "Turno del jugador rojo");
 	                        	 	
 	                        }
 	                    });
 	                    
-	                    botonColorRojo[x][y].setBackground(Color.RED);
+	                                       
+	                    
+
+	                    
 	                    botonColorAzul[x][y].setBackground(Color.BLUE);
 	                    
-	                    f[x][y].add(botonColorAzul[x][y]);
-	                    f[x][y].add(botonColorRojo[x][y]);                  
+	                    f[x][y].add(botonColorAzul[x][y]);  
+
+	                    
+	                    botonColorRojo[x][y].setBackground(Color.RED);
+	                    
+	                    f[x][y].add(botonColorRojo[x][y]);   
+	                    
 	                    
 	                }
 	                
+	     	      // turnoTexto.setText("Es el turno del jugador 1:"+turno[0]);
+	    	       //turnoTexto.setEditable(false);
+	     	       
+	     	       
+
 	                if(bridg_it_file[x][y]==1){        
 	                    f[x][y].setBackground(Color.RED);
 	                }
@@ -154,6 +204,10 @@ public class InterfazFrameDosPersonas extends JFrame{
 
 	            }
 	        }
+	        
+                  
+	        
+	
 
 
 	        Border border = BorderFactory.createLineBorder(Color.darkGray,3);
@@ -174,10 +228,8 @@ public class InterfazFrameDosPersonas extends JFrame{
 	        setLocationRelativeTo(null);
 	        setResizable(false);
 	        setVisible(true);
+	        
+	    	}
 
 	    }	    
 
-
-
-
-}
