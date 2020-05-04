@@ -46,9 +46,9 @@ public class InterfazFrameDosPersonas extends JFrame{
 	    private void initComponents(final int [][] bridg_it_file) {
 	    	
 	    	
-	        menubar.add(menu);
-	        menu.add(optionordenador);
-	        menu.add(option2Personas);
+	        //menubar.add(menu);
+	        //menu.add(optionordenador);
+	        //menu.add(option2Personas);
 	        menubar.add(turnoTexto);
 	        
 	        option2Personas.addActionListener(new ActionListener() {
@@ -215,11 +215,7 @@ public class InterfazFrameDosPersonas extends JFrame{
 	        bridgit.setBorder(border);
 
 
-	        solve=new JButton("Submit");
-
-	        down.add(solve);
 	        contentPane.add(bridgit, BorderLayout.CENTER);
-	        contentPane.add(down,BorderLayout.PAGE_END);
 	        contentPane.add(menubar, BorderLayout.NORTH);
 	        contentPane.add(turnoTexto, BorderLayout.EAST);
 	        setDefaultCloseOperation(EXIT_ON_CLOSE);

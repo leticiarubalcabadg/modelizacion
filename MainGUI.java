@@ -5,7 +5,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainGUI {
+public class MainGUI extends JFrame{
 
     private JFrame frame;
     private JLabel title;
@@ -35,7 +35,7 @@ public class MainGUI {
         frame.setLocationRelativeTo(null); //opening window in the center
         frame.setLayout(null);
         frame.setVisible(true);
-        frame.getContentPane().setBackground(Color.black);
+        frame.getContentPane().setBackground(Color.CYAN.darker());
 
 
         title = new JLabel("Welcome to Bridg It!");
@@ -55,11 +55,8 @@ public class MainGUI {
         ordenador.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                StartingPuzzle bridg = new StartingPuzzle();;
-                 
-                int [][] bridg_it_file=bridg.getBridgit();
-                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+            	
+                Interfaz interfazDos = new Interfaz();
             }
         });
         
@@ -75,7 +72,7 @@ public class MainGUI {
                 frame.setVisible(false);
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
-                int [][] bridg_it_file=bridg.getBridgit();
+                int [][] bridg_it_file=bridg.getBridgit2jugadores();
                 InterfazFrameDosPersonas interfaz = new InterfazFrameDosPersonas(bridg_it_file);
             }
         });
@@ -90,14 +87,3 @@ public class MainGUI {
 	
 }
 
-/**
- * despues de bridg, sirve para seleccionar uno aleatoriamente
- try {
- 	bridg = new StartingPuzzle();
- } catch (IOException ex) {
-     ex.printStackTrace();
- }
-
- //assert bridg != null;
- //int [][] bridg_it_file = bridg.getRandomClassicPuzzle(bridg.getClassicPuzzles());
-  **/

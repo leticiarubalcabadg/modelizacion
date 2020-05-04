@@ -37,9 +37,9 @@ public class InterfazFrame extends JFrame{
 
     private void initComponents(final int [][] bridg_it_file) {
     	
-        menubar.add(menu);
-       menu.add(option2Personas);
-       menu.add(optionordenador);
+        //menubar.add(menu);
+       //menu.add(option2Personas);
+       //menu.add(optionordenador);
        
        option2Personas.addActionListener(new ActionListener() {
            @Override
@@ -146,12 +146,8 @@ public class InterfazFrame extends JFrame{
         bridgit.setLayout(new GridLayout(11, 11));
         bridgit.setBorder(border);
 
-
-        solve=new JButton("Submit");
-
-        down.add(solve);
+        
         contentPane.add(bridgit, BorderLayout.CENTER);
-        contentPane.add(down,BorderLayout.PAGE_END);
         contentPane.add(menubar, BorderLayout.NORTH);
         contentPane.add(turnoTexto, BorderLayout.EAST);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -160,9 +156,9 @@ public class InterfazFrame extends JFrame{
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-
   
     	}
+    
 		public int[] estrategiaGanadora (int x,int y){
 				
 				boolean movimientoHecho=false;
@@ -175,14 +171,13 @@ public class InterfazFrame extends JFrame{
 
 					//comprobar que (x+2,y) o en (x-2,y) esta vacío (especial)
 					if((bridg_it_file[x][y+2]==5 || bridg_it_file[x][y+2]==0) && !movimientoHecho) {
-						
 						//se pone el (x, y+2) en rojo
 						bridg_it_file[x][y+2]=1;
 						coordenadas[0]=x;
 						coordenadas[1]=y+2;
 						movimientoHecho=true;
 					}
-					if((bridg_it_file[x][y-2]==5 || bridg_it_file[x][y-2]==0) && !movimientoHecho) {
+					else if((bridg_it_file[x][y-2]==5 || bridg_it_file[x][y-2]==0) && !movimientoHecho) {
 						//se pone el (x, y-2) en rojo
 						bridg_it_file[x][y-2]=1;
 						coordenadas[0]=x;
@@ -214,7 +209,7 @@ public class InterfazFrame extends JFrame{
 						movimientoHecho=true;
 						
 					}
-					if((bridg_it_file[x-1][y-1]==0 || bridg_it_file[x-1][y-1]==5) && !movimientoHecho) {
+					else if((bridg_it_file[x-1][y-1]==0 || bridg_it_file[x-1][y-1]==5) && !movimientoHecho) {
 						//se pone el (x-1, y-1) en rojo
 						bridg_it_file[x-1][y-1]=1;
 						coordenadas[0]=x-1;
