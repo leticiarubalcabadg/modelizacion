@@ -1,5 +1,6 @@
 package modelizacion;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -61,7 +62,8 @@ public class Interfaz extends JFrame{
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
                 int [][] bridg_it_file=bridg.getBridgit();
-                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+                String [][] bridg_it_file_extra=bridg.getBridgitEXTRA();
+                InterfazFrame interfaz = new InterfazFrame(bridg_it_file,bridg_it_file_extra);
             }
         });
         
@@ -80,7 +82,8 @@ public class Interfaz extends JFrame{
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
                 int [][] bridg_it_file=bridg.getBridgit2();
-                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+                String [][] bridg_it_file_extra=bridg.getBridgitEXTRA2();
+                InterfazFrame interfaz = new InterfazFrame(bridg_it_file,bridg_it_file_extra);
             }
         });
         
@@ -99,7 +102,8 @@ public class Interfaz extends JFrame{
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
                 int [][] bridg_it_file=bridg.getBridgit3();
-                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+                String [][] bridg_it_file_extra=bridg.getBridgitEXTRA3();
+                InterfazFrame interfaz = new InterfazFrame(bridg_it_file,bridg_it_file_extra);
             }
         });
         
@@ -117,7 +121,8 @@ public class Interfaz extends JFrame{
                 StartingPuzzle bridg = new StartingPuzzle();;
                  
                 int [][] bridg_it_file=bridg.getBridgit4();
-                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+                String [][] bridg_it_file_extra=bridg.getBridgitEXTRA4();
+                InterfazFrame interfaz = new InterfazFrame(bridg_it_file,bridg_it_file_extra);
             }
         });
 

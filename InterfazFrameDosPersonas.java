@@ -69,7 +69,8 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                StartingPuzzle bridg = new StartingPuzzle();;
 	                 
 	                int [][] bridg_it_file=bridg.getBridgit();
-	                InterfazFrame interfaz = new InterfazFrame(bridg_it_file);
+	                String [][] bridg_it_file_extra=bridg.getBridgitEXTRA();
+	                InterfazFrame interfaz = new InterfazFrame(bridg_it_file,bridg_it_file_extra);
 	            }
 	        });
 	        
