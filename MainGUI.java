@@ -38,7 +38,7 @@ public class MainGUI extends JFrame{
         frame.getContentPane().setBackground(Color.CYAN.darker());
 
 
-        title = new JLabel("Welcome to Bridg It!");
+        title = new JLabel("!Bienvenidos a Bridg It!");
         title.setBounds(75,-150, 600,600);
 
 

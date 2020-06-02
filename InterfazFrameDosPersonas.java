@@ -10,11 +10,7 @@
 
 public class InterfazFrameDosPersonas extends JFrame{
 
-		//turno del jugador rojo->1
-		//turno del jugador azul ->2
-		//int [] turno;
 		
-	    protected JButton solve;
 	    JPanel down= new JPanel();
 	    
 	    JMenuBar menubar= new JMenuBar();
@@ -37,8 +33,6 @@ public class InterfazFrameDosPersonas extends JFrame{
 	    public InterfazFrameDosPersonas(int [][] bridg_it_file) {
 	        super();
 	        f= new JPanel[11][11];
-	        /**turno= new int [1];
-	        turno [0]=1;**/
 	        initComponents(bridg_it_file);
 	    }
 
@@ -107,26 +101,10 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                        	f[x2][y2].setBackground(Color.RED);
 	                        	bridg_it_file[x2][y2]=1;
 	                        	
-	                        	//turno[0]=2;
-	                        	
 	                        	f[x2][y2].remove(botonColorRojo[x2][y2]);
 	                        	f[x2][y2].remove(botonColorAzul[x2][y2]);	                        	
 	                      
 	         	    	    	turnoTexto.setText("Es turno del AZUL");
-
-	         	   	        /**
-	         	    	    	for (int x = 0; x <11; x++) {        	
-	         	   	            for (int y = 0; y < 11; y++) {
-		         	   	            if(bridg_it_file[x][y]==0){
-			         	   	           	f[x][y].remove(botonColorAzul[x][y]);
-			         	   	           	f[x][y].remove(botonColorRojo[x][y]);
-		        	                    f[x][y].setBackground(Color.WHITE);
-		        	                    botonColorAzul[x][y].setBackground(Color.BLUE);	        	                    
-		        	                    f[x][y].add(botonColorAzul[x][y]);  
-		        	                    botonColorAzul[x][y].setBackground(Color.BLUE); 
-		         	   	            }
-	         	   	            }
-	         	   	        }**/
 	         	    	    	
 	         	    	    	 JPanel panel = new JPanel();
 	         	    	    	 JOptionPane.showMessageDialog(panel, "Turno del jugador azul");
@@ -136,32 +114,16 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                    botonColorAzul[x][y].addActionListener(new ActionListener() {
 	                        @Override
 	                        public void actionPerformed(ActionEvent e) {
-	                        	//System.out.print(""+x2);
+	                        	
 	                        	f[x2][y2].setBackground(Color.BLUE);
 	                        	bridg_it_file[x2][y2]=2;
 
-	                        	//turno[0]=1;
 	                        	
 	                        	f[x2][y2].remove(botonColorAzul[x2][y2]);
 	                        	f[x2][y2].remove(botonColorRojo[x2][y2]);
 
 	                        	
 		         	    	    	turnoTexto.setText("Es turno del ROJO");
-		         	    	    	
-			         	   	     /**
-		         	    	    	for (int x = 0; x <11; x++) {        	
-			         	   	       for (int y = 0; y < 11; y++) {
-				         	   	         if(bridg_it_file[x][y]==0){
-				         	   	           	f[x][y].remove(botonColorAzul[x][y]);
-				         	   	           	f[x][y].remove(botonColorRojo[x][y]);
-			        	                    f[x][y].setBackground(Color.WHITE);
-				         	   	        	botonColorRojo[x][y].setBackground(Color.RED);
-				        	                f[x][y].add(botonColorRojo[x][y]);  
-				        	                botonColorRojo[x][y].setBackground(Color.RED); 
-				         	   	          }
-			         	   	          }
-			         	   	       }**/  
-		         	    	    	
 
 		         	    	    	 JPanel panel = new JPanel();
 		         	    	    	 JOptionPane.showMessageDialog(panel, "Turno del jugador rojo");
@@ -184,10 +146,7 @@ public class InterfazFrameDosPersonas extends JFrame{
 	                    
 	                    
 	                }
-	                
-	     	      // turnoTexto.setText("Es el turno del jugador 1:"+turno[0]);
-	    	       //turnoTexto.setEditable(false);
-	     	       
+	                	     	       
 	     	       
 
 	                if(bridg_it_file[x][y]==1){        

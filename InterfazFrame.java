@@ -93,7 +93,7 @@ public class InterfazFrame extends JFrame {
 					botonColorAzul[x][y].addActionListener(new ActionListener() {
 						@Override
 						public void actionPerformed(ActionEvent e) {
-							// System.out.print(""+x2);
+							
 							f[x2][y2].setBackground(Color.BLUE);
 
 							f[x2][y2].remove(botonColorAzul[x2][y2]);
@@ -184,99 +184,3 @@ public class InterfazFrame extends JFrame {
 	}
 
 }
-
-
-/**
- * 
-	
-public void cogerArrayEstrategia() {
-
-for (int x = 10; x != -1; x--) {
-	for (int y = 10; y != -1; y--) {				
-
-		arrayEstrategia[10 - x][y] = (x * 10) + y;
-	}
-}
-
-}
-
-if (bridg_it_file[x][y] == 5 && !movimientoHecho) {
-
-	coordenadas[1] = valor % 10;
-	coordenadas[0] = (valor - coordenadas[1]) / 10;
-	System.out.println("5:Nuestro coordenada en x es " + coordenadas[0]);
-	System.out.println("5:Nuestro coordenada en y es " + coordenadas[1]);
-
-} else if (bridg_it_file[x][y] == 0 && !movimientoHecho) {
-
-	coordenadas[1] = (valor + 1) % 10;
-	coordenadas[0] = (valor - coordenadas[1]) / 10;
-
-	System.out.println("0:Nuestro coordenada en x es " + coordenadas[0]);
-	System.out.println("0:Nuestro coordenada en y es " + coordenadas[1]);
-
-}
-
-**/
-
-
-
-/**
- * //movimiento especial if(bridg_it_file[x][y]==5 && !movimientoHecho) {
-  
-  try{
- * 
- * //comprobar que (x+2,y) o en (x-2,y) esta vacío (especial)
- * if((bridg_it_file[x][y+2]==5 || bridg_it_file[x][y+2]==0) &&
- * !movimientoHecho) { //se pone el (x, y+2) en rojo bridg_it_file[x][y+2]=1;
- * coordenadas[0]=x; coordenadas[1]=y+2; movimientoHecho=true; } else
- * if((bridg_it_file[x][y-2]==5 || bridg_it_file[x][y-2]==0) &&
- * !movimientoHecho) { //se pone el (x, y-2) en rojo bridg_it_file[x][y-2]=1;
- * coordenadas[0]=x; coordenadas[1]=y-2; movimientoHecho=true; }
- * }catch(ArrayIndexOutOfBoundsException e) {
- * 
- * if((bridg_it_file[x][y-2]==5 || bridg_it_file[x][y-2]==0) &&
- * !movimientoHecho) { //se pone el (x, y-2) en rojo bridg_it_file[x][y-2]=1;
- * coordenadas[0]=x; coordenadas[1]=y-2; movimientoHecho=true; } } }
- * 
- * //movimiento normal if (bridg_it_file[x][y]==0 && !movimientoHecho) {
- * 
- * try { //comprobar que la casilla que se va a cambiar de color esta vacía
- * if((bridg_it_file[x+1][y+1]==0 || bridg_it_file[x+1][y+1]==5) &&
- * !movimientoHecho) { //se pone el (x+1, y+1) en rojo
- * bridg_it_file[x+1][y+1]=1; coordenadas[0]=x+1; coordenadas[1]=y+1;
- * movimientoHecho=true;
- * 
- * } else if((bridg_it_file[x-1][y-1]==0 || bridg_it_file[x-1][y-1]==5) &&
- * !movimientoHecho) { //se pone el (x-1, y-1) en rojo
- * bridg_it_file[x-1][y-1]=1; coordenadas[0]=x-1; coordenadas[1]=y-1;
- * movimientoHecho=true; } }catch(ArrayIndexOutOfBoundsException e) {
- * if((bridg_it_file[x-1][y-1]==0 || bridg_it_file[x-1][y-1]==5) &&
- * !movimientoHecho) { //se pone el (x-1, y-1) en rojo
- * bridg_it_file[x-1][y-1]=1; coordenadas[0]=x-1; coordenadas[1]=y-1;
- * movimientoHecho=true; } } }
- * 
- **/
-
-/**
- * 
- * //public int sizesub; //public JPanel p[][]; //p= new
- * JPanel[sizesub][sizesub]; This loop adds to each sub grid a textfield
- * 
- * for (int u = 0; u <= (sizesub-1); u++) { for (int i = 0; i <= (sizesub-1);
- * i++) { for (int x = 0; x <= (sizesub-1); x++) { for (int y = 0; y <=
- * (sizesub-1); y++) { p[u][i].add(f[x + u * (sizesub)][y + i * (sizesub)]); } }
- * sudoku.add(p[u][i]); } }
- **/
-
-//f[x][y].setText(""+bridg_it_file[x][y]);
-//f[x][y].setEditable(false);
-
-//protected JToggleButton help;
-// protected JButton newPuzzle;
-
-//newPuzzle = new JButton("New Puzzle");
-//help = new JToggleButton("Help");
-
-//down.add(help);
-//down.add(newPuzzle);
